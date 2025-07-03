@@ -1,20 +1,48 @@
-# Smart Genealogy Tree and Details Viewer Web App
-Smart serverless Browser based vanilla Javascript Gedcom 5.5.1 Tree and Details Viewer.
+# Genealogy Web Tools
 
-An open-source JavaScript application for visualizing GEDCOM 5.5.1 family trees and individual details.  
-Built by Henri Peterson – no backend, runs entirely in the browser.
+**Open-source browser-based tools for exploring and visualizing GEDCOM files.**  
+Built with privacy, portability, and simplicity in mind.
 
-## Features
-- Parses GEDCOM 5.5.1 files
-- Displays individual details, family links
-- Works offline (no server required)
+---
 
-## Getting Started
-1. Open `index.html` in a browser
-2. Select your `.ged` file
+## 🔍 What is this?
 
-📚 See the [Wiki](https://github.com/henripeterson68/genealogy/wiki) for full documentation.
+Genealogy Web Tools is a non-commercial initiative providing client-side web applications for genealogists and enthusiasts.
 
-## License
-MIT License
+We develop tools that:
+- ⚙️ Load and display GEDCOM 5.5.1 files directly in your browser
+- 🌳 Visualize family trees using interactive components (like jsTree)
+- 📑 Show detailed individual, media, and note views
+- 🛡️ Process all data locally — no cloud, no server
+- 📱 Work on mobile, tablet, and desktop
 
+---
+
+## 🌐 Projects
+
+### 🔸 [Smart GEDCOM Viewer](https://github.com/GenealogyWebTools/smart-gedcom-viewer)
+
+A lightweight web viewer that runs offline, supports drag-and-drop, and provides a clean UI for exploring complex genealogies.
+
+---
+
+## 🤝 Contribute
+
+This project is open to community contributions:
+- Found a bug? Create an issue.
+- Want to improve a feature or translation? Submit a pull request.
+- Just interested? Join the discussion via GitHub Issues.
+
+---
+
+## 🧭 Mission
+
+To empower genealogists with free, privacy-friendly, and modern open-source tools  
+that run in the browser and respect their data.
+
+---
+
+## 📫 Contact
+
+- Organization: [GenealogyWebTools](https://github.com/GenealogyWebTools)
+- Wiki: [Smart GEDCOM Viewer Wiki](https://github.com/GenealogyWebTools/smart-gedcom-viewer/wiki)
