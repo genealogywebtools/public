@@ -1,130 +1,82 @@
 <!DOCTYPE html>
-<html lang="fr">
-	
+<html lang="en">
 <head>
-  	
-	<!-- Caractères et responsive -->
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	
-	<!-- Titre court (s'affiche dans les moteurs de recherche) -->
-	<title>Open Source serverless Vanilla JavaScript smart GEDCOM 5.5.1 Parser and Family Tree Viewer</title>
-	
-	<!-- Description de la page (SEO + aperçu sur moteurs de recherche) -->
-	<meta name="description" content="Open source GEDCOM serverless smart parser and family tree viewer written in vanilla JavaScript. Visualize and explore gedcom 5.5.1 genealogy data directly and locally in the browser without frameworks and without HTTP/HTTPS-server." />
-	
-	<!-- Mots-clés pour SEO (facultatif, peu utilisé aujourd’hui) -->
-	<meta name="keywords" content="GEDCOM 5.5.1, genealogy, family tree, vanilla JavaScript, open source, parser, viewer, vanilla JS, HTML, client-side, serverless" />
-	
-	<!-- Auteur -->
-	<meta name="author" content="Jacques Morand / Software Developper" />
-	
-	<!-- Langue du document -->
-	<meta http-equiv="content-language" content="en" />
-	
-	<!-- Robots (SEO) -->
-	<meta name="robots" content="index, follow" />    	
-	    
-    <!-- Open Graph / Facebook / Discord -->
-	<meta property="og:title" content="Open Source serverless smart GEDCOM 5.5.1 Parser and Family Tree Viewer" />
-	<meta property="og:description" content="A smart and lightweight, client-side browser-based GEDCOM viewer written in vanilla JavaScript. No server, no framework, just load your GEDCOM 5.5.1 file and explore with your local browser your family tree." />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://yourdomain.com/" />
-	<meta property="og:image" content="https://yourdomain.com/preview.png" /> <!-- Optionnel -->
-	
-	<!-- Twitter Card -->
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Open Source serverless smart GEDCOM 5.5.1 Parser and Family Tree Viewer" />
-	<meta name="twitter:description" content="A smart and lightweight, client-side browser-based GEDCOM viewer written in vanilla JavaScript. No server, no framework, just load your GEDCOM 5.5.1 file and explore with your local browser your family tree." />
-	<meta name="twitter:image" content="https://yourdomain.com/preview.png" />
-	
-	<!-- Source Files to load before html body -->
-	<script src="./gedcomData.js"></script>
-	<script src="./SourceTextFiles.js"></script>
-    <script src="./HelpPageSection.js"></script>
-    <script src="./AboutPageSection.js"></script>
-    
-	<!-- Link Files -->
-	<link rel="stylesheet" href="style.css" />
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Genealogy Web Tools</title>
+  <style>
+    body { font-family: "Segoe UI", sans-serif; margin: 0; background: #f4f4f9; }
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      background-color: #30507D; color: white; padding: 1rem 2rem; flex-wrap: wrap;
+    }
+    .logo-container { display: flex; align-items: center; }
+    .logo-container img { height: 48px; width: 48px; margin-right: 1rem; border-radius: 8px; }
+    h1 { margin: 0; font-size: 1.8rem; }
+    nav a {
+      color: white; text-decoration: none; margin: 0 1rem; font-weight: bold;
+    }
+    nav a:hover { text-decoration: underline; }
+    main {
+      max-width: 800px; margin: auto; padding: 2rem;
+      background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin-top: 2rem;
+    }
+    section { margin-bottom: 2rem; }
+    footer {
+      text-align: center; font-size: 0.9rem; color: #666;
+      margin: 3rem 0 1rem 0;
+    }
+    @media (max-width: 600px) {
+      header { flex-direction: column; align-items: flex-start; }
+      nav a { display: block; margin: 0.5rem 0; }
+      h1 { font-size: 1.4rem; }
+    }
+  </style>
 </head>
-
 <body>
-	
-	<header>
-		<nav>
-	        <button onclick="showPage('titel-page')">Titre</button>
-	        <button onclick="showPage('tree-page')">Arborescence</button>
-	        <button onclick="showPage('details-page')">Détails</button>
-	        <button onclick="showPage('historic-page')">Historique</button>
-	        <button onclick="showPage('heraldic-page')">Héraldique</button>
-	        <button onclick="showPage('help-page')">Aide</button>
-	        <button onclick="showPage('about-page')">About</button>
-		</nav>
-	</header>
 
-	<main>
-		<!-- Page Titre Généalogie -->
-		<div id="titel-page">
-			<h2>Généalogie des familles Morand du Pâquier</h2>
-			<p>
-				Descendance de Joseph Nicolas MORAND et de Magdalena MORAND née Grandjean.<br>
-				8 générations de 1780 à 2025
-			</p>
-			<img src="./ArmoiriesMorand.png" alt="Armoiries de la famille Morand du Pâquier" class="center-image">
-		</div>
+  <header>
+    <div class="logo-container">
+      <img src="logo.png" alt="Logo" />
+      <h1>Genealogy Web Tools</h1>
+    </div>
+    <nav>
+      <a href="https://github.com/GenealogyWebTools">GitHub</a>
+      <a href="https://github.com/GenealogyWebTools/smart-gedcom-viewer">Viewer</a>
+      <a href="https://github.com/GenealogyWebTools/smart-gedcom-viewer/wiki">Wiki</a>
+    </nav>
+  </header>
 
-		<!-- Page Arbre Généalogique -->
-		<div id="tree-page">
-			<h2>Arbre généalogique</h2>
-			<div id="familyTreeContainerNew"></div>
-			<div class="no-print">
-				<button onclick="window.print();">Imprimer A4 paysage</button>
-			</div>
-		</div>
+  <main>
+    <section>
+      <h2>Our Mission</h2>
+      <p>
+        We create free, open-source, privacy-conscious genealogy tools that run directly in your browser.
+        No installation. No cloud. Your data stays with you.
+      </p>
+    </section>
 
-		<!-- Page Détails -->
-		<div id="details-page">
-			<h2>Détails de l'individu</h2>
-			<div id="fiche-details"></div>
-			<div class="error" id="error" style="display: none;">
-				Impossible de charger les données pour cet individu.
-			</div>
-		</div>
-		
-		<!-- Page Historique -->
-		<div id="historic-page">
-			<h2>Historique</h2>
-			<div id="historic-page-section"></div>
-		</div>
+    <section>
+      <h2>Featured Project</h2>
+      <h3><a href="https://github.com/GenealogyWebTools/smart-gedcom-viewer">Smart GEDCOM Viewer</a></h3>
+      <p>
+        A portable, client-side web app to explore GEDCOM 5.5.1 files interactively.
+        Built with simplicity and accessibility in mind. Works offline on mobile and desktop.
+      </p>
+    </section>
 
-		<!-- Page Héraldique -->
-		<div id="heraldic-page">
-			<h2>Héraldique</h2>
-			<div id="heraldic-page-section"></div>
-		</div>
-
-		<!-- Page Help -->
-		<div id="help-page">
-			<h2>Guide d'utilisation</h2>
-			<div id="help-page-section"></div>
-		</div>
-
-        <!-- Page About -->
-		<div id="about-page">
-			<h2>About</h2>
-			<div id="about-page-section"></div>
-		</div>
-    
+    <section>
+      <h2>Contact & Contribution</h2>
+      <p>
+        Want to contribute? See our project repositories or suggest improvements.
+        We welcome pull requests and ideas!
+      </p>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 - Généalogie des familles Morand du Pâquier - Jacques Morand & Patrice Morand - Tous droits de reproduction réservés.</p>
+    &copy; 2025 Genealogy Web Tools — Open tools for open family history
   </footer>
 
-
-  <script src="script.js"></script>
 </body>
-
 </html>
-
